@@ -16,3 +16,17 @@ function getComputerChoice() {
     
 getComputerChoice();
 
+function playRound(playerSelection, computerSelection){
+     if (playerSelection === "rock" && computerSelection ==="scissors"){
+        return "You win! Rock beats scissors!";
+    }
+}
+
+function playerSelection() {
+   let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+   console.log(playerChoice);
+    return playerChoice;
+}
+
+playerSelection();
+playRound();
