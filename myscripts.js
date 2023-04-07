@@ -12,12 +12,16 @@ function playerSelection() {
    return playerChoice;
 }
 
-function playRound(getComputerChoice, playerSelection){
-    if (getComputerChoice === "rock" && playerSelection ==="scissors"){
+function playRound(playerSelection, getComputerChoice){
+    if (playerSelection === "rock" && getComputerChoice ==="scissors"){
        return "You win! Rock beats scissors!";
    }
 }
 
-getComputerChoice();
-playerSelection();
+let computerChoice = getComputerChoice();
+let playerChoice = playerSelection();
+console.log(playRound(playerChoice, computerChoice));
+
+//playRound();
+
 
