@@ -1,11 +1,3 @@
-// Your game is going to play against the computer,
- //so begin with a function called getComputerChoice 
- //that will randomly return either ‘Rock’, ‘Paper’ or 
- //‘Scissors’. We’ll use this function in the game to make the 
- //computer’s play. Tip: use the console to make sure this is 
- //returning the expected output before moving to the next step! 
-
-
 function getComputerChoice() {
     let options = ["rock", "paper", "scissors"];
     let compChoice = options[Math.floor(Math.random() * options.length)];
@@ -14,19 +6,22 @@ function getComputerChoice() {
 
 }
     
-getComputerChoice();
 
-function playRound(playerSelection, computerSelection){
-     if (playerSelection === "rock" && computerSelection ==="scissors"){
-        return "You win! Rock beats scissors!";
-    }
-}
+
+
 
 function playerSelection() {
    let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
    console.log(playerChoice);
-    return playerChoice;
+   return playerChoice;
 }
 
+function playRound(playerChoice, compChoice){
+    if (playerChoice === "rock" && compChoice ==="scissors"){
+       return "You win! Rock beats scissors!";
+   }
+}
+
+getComputerChoice();
 playerSelection();
-playRound();
+
