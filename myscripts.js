@@ -40,13 +40,6 @@ let playerChoice = playerSelection();
 console.log(playRound(playerChoice, computerChoice));
 
 
-
-//Write a NEW function called game(). Use the previous function
-// inside of this one to play a 5 round game that
-// keeps score and reports a winner or loser at the end.
-
-
-
 function game() {
     let playerScore = 0;
     let computerScore = 0;
