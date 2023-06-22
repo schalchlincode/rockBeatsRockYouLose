@@ -4,6 +4,8 @@ function getComputerChoice () {
   return choices[compChoice]
 }
 
+//player selection function
+
 function getPlayerSelection () {
   let rockbtn = document.getElementById('rockbtn')
   let paperbtn = document.getElementById('paperbtn')
@@ -12,6 +14,14 @@ function getPlayerSelection () {
   rockbtn.addEventListener('click', function () {
     const playerSelection = 'rock'
     const computerSelection = getComputerChoice()
+
+    document.getElementById(
+      'rockdiv'
+    ).innerText = `you chose ${playerSelection}`
+
+    console.log(computerSelection)
+    console.log(playerSelection)
+    console.log(playRound(playerSelection, computerSelection))
   })
 }
 
@@ -19,8 +29,10 @@ paperbtn.addEventListener('click', function () {
   const playerSelection = 'paper'
   const computerSelection = getComputerChoice()
 
-  console.log(playerSelection)
+  document.getElementById('paperdiv').innerText = `you chose ${playerSelection}`
+
   console.log(computerSelection)
+  console.log(playerSelection)
   console.log(playRound(playerSelection, computerSelection))
 })
 
@@ -28,10 +40,16 @@ scissorsbtn.addEventListener('click', function () {
   const playerSelection = 'scissors'
   const computerSelection = getComputerChoice()
 
-  console.log(playerSelection)
+  document.getElementById(
+    'scissorsdiv'
+  ).innerText = `you chose ${playerSelection}`
+
   console.log(computerSelection)
+  console.log(playerSelection)
   console.log(playRound(playerSelection, computerSelection))
 })
+
+//endplayerselection function
 
 function playRound (playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -48,37 +66,37 @@ function playRound (playerSelection, computerSelection) {
 const computerSelection = getComputerChoice()
 const playerSelection = getPlayerSelection()
 
-// function game () {
-//   let playerScore = 0
-//   let computerScore = 0
+function game () {
+  let playerScore = 0
+  let computerScore = 0
 
-//   for (let i = 0; i < 5; i++) {
-//     let playerSelection = getPlayerSelection()
-//     let computerSelection = getComputerChoice()
-//     let roundResult = playRound(playerSelection, computerSelection)
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = getPlayerSelection()
+    let computerSelection = getComputerChoice()
+    let roundResult = playRound(playerSelection, computerSelection)
 
-//     console.log(`Round ${i + 1} - Player's choice: ${playerSelection}`)
-//     console.log(`Round ${i + 1} - Computer's choice: ${computerSelection}`)
-//     console.log(`Round ${i + 1} - ${roundResult}`)
+    console.log(`Round ${i + 1} - Player's choice: ${playerSelection}`)
+    console.log(`Round ${i + 1} - Computer's choice: ${computerSelection}`)
+    console.log(`Round ${i + 1} - ${roundResult}`)
 
-//     if (roundResult === 'you win') {
-//       playerScore++
-//     } else if (roundResult === 'you lose') {
-//       computerScore++
-//     }
-//   }
+    if (roundResult === 'you win') {
+      playerScore++
+    } else if (roundResult === 'you lose') {
+      computerScore++
+    }
+  }
 
-//   console.log(
-//     `Final score: Player - ${playerScore}, Computer - ${computerScore}`
-//   )
+  console.log(
+    `Final score: Player - ${playerScore}, Computer - ${computerScore}`
+  )
 
-//   if (playerScore > computerScore) {
-//     console.log('Congratulations! You are the winner.')
-//   } else if (computerScore > playerScore) {
-//     console.log('Sorry, the computer won this time.')
-//   } else {
-//     console.log("It's a tie!")
-//   }
-// }
+  if (playerScore > computerScore) {
+    console.log('Congratulations! You are the winner.')
+  } else if (computerScore > playerScore) {
+    console.log('Sorry, the computer won this time.')
+  } else {
+    console.log("It's a tie!")
+  }
+}
 
-// game()
+game()
